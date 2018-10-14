@@ -40,10 +40,11 @@
 	            	<i class="fas fa-phone"></i>
 					<p>
 						<input type="text" id="customer_phone" class="form-control" placeholder="Номер телефона" required>
-                        <input type="checkbox" id="phone_mask" checked>
-                        <label id="descr" for="phone_mask">Маска ввода</label>
 						<button type="submit" href="#pablo" class="btn btn-submit" disabled><i class="fas fa-arrow-right"></i></button>
+
 					</p>
+                    <input type="checkbox" id="phone_mask" checked>
+                    <label id="descr" for="phone_mask">Маска ввода</label>
 					
 				</div>
 			</form>
@@ -68,6 +69,7 @@
 </body>
 <script type="text/javascript" src="/js/jquery-3.2.1.min.js"></script>
 <script defer src="https://use.fontawesome.com/releases/v5.0.2/js/all.js"></script>
+<script type="text/javascript" src="/js/jquery.inputmask.js"></script>
 <script type="text/javascript" src="/js/mask/js/jquery.inputmask-multi.min.js"></script>
-<script type="text/javascript" src="/js/init.js?ver3"></script>
+<script type="text/javascript" src="/js/init.js?ver5"></script>
 </html>
