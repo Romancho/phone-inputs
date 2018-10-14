@@ -1,0 +1,80 @@
+
+
+// Screen Mode: Desktop(Large, Medium), Tablet
+@screen-desktop-lg: ~"screen and (min-width: 1330px)";
+@screen-desktop-md: ~"screen and (min-width: 1011px) and (max-width: 1329px)";
+@screen-desktop-sm: ~"screen and (min-width: 769px) and (max-width: 1010px)";
+@screen-tablet:     ~"screen and (max-width: 768px)";
+
+@landscape: ~"(orientation: landscape)";
+@portrait: ~"(orientation: portrait)";
+
+
+
+
+/******FONTS***********/
+@font-default: 'Montserrat', sans-serif;
+.font-default(@size: 14px, @line-height: 1.3, @weight: 400) {
+    font: @weight ~'@{size}/@{line-height}' @font-default;
+}
+
+//////////////////////////////////////////////////////
+// CONSTANTS
+
+@lightColor: #fff;
+@darkColor: #000;
+@lightBg: rgba(255, 255, 255, 1);
+@darkBg: rgba(0, 0, 0, 1);
+@numberOfThemes: 3; //controls theme loop
+
+
+//////////////////////////////////////////////////////
+// MIXINS
+.border(@color) {
+  border: 1px @color solid;
+}
+.margin-gutter {
+  @media @screen-desktop-lg {
+    margin: 17px 0;
+  }
+  @media @screen-desktop-md {
+    margin: 17px 0;
+  }
+  @media @screen-desktop-sm {
+    margin: 17px 0;
+  }
+  @media @screen-tablet {
+    margin: 12px 0;
+  }
+}
+.animate(@sec) {
+  transition: all @sec linear;
+}
+//Theme Definitions by parametric mixin numbers (1), (2), etc.
+.themeDefs(1) {
+  @lightColor: #fff;
+  @darkColor: #000;
+  @lightBg: rgba(255, 255, 255, 1);
+  @darkBg: rgba(0, 0, 0, 1);
+  @fill-bg: rgba(255,255,255, 1); // Заливка SVG-logo
+  @specialColor: #f00;
+}
+
+.themeDefs(2) {
+  //inverse of 1
+  @lightColor: #fff;
+  @darkColor: #f00;
+  @lightBg: #fff;
+  @darkBg: #f00;
+  @fill-bg: rgba(0,255,0, 1); // Заливка SVG-logo
+  @specialColor: #2F4F4F;
+}
+
+.themeDefs(3) {
+  @lightColor: #cfc;
+  @darkColor: #363;
+  @lightBg: #cfc;
+  @darkBg: #363;
+  @fill-bg: rgba(0, 0, 255, 1); // Заливка SVG-logo
+  @specialColor: #2F4F4F;
+}

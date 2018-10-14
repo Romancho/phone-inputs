@@ -1,0 +1,63 @@
+.buildThemes(@index) when (@index < @numberOfThemes + 1) {
+
+  .theme-@{index} {
+      .themeDefs(@index); 
+      color: @lightColor;
+      background: @darkBg; 
+      .background-inputs(@opacity) {
+        background: fade(@lightBg, @opacity);
+      }
+      main {
+        background-image:url('/img/enslave-bg.png');
+      }
+    .lang {
+      span {
+        background: @lightColor;
+        color: @darkColor;
+      }
+    }
+
+      .logo {
+        path {
+          fill: @fill-bg;
+        }
+      }
+      a {
+        color: @lightColor;
+      }
+      .auth-form {
+        p {
+          color: @lightColor;
+        }
+      }
+      #customer_phone {
+        .background-inputs(10%);
+        color: @lightColor;
+          &::placeholder {
+          color: @lightColor;
+        }
+
+      }
+      form#authForm {
+        &:focus {
+          .background-inputs(30%);
+        }
+      }
+      button {
+        color: @lightColor;
+        .border(@lightColor); // просто добавляем цвет
+        border:0;
+        .background-inputs(10%);
+
+        svg {
+          color: @lightColor;
+        }
+      }
+      
+    }
+    .buildThemes(@index + 1);
+}
+//stop loop
+.buildThemes(@index) {}
+//start theme building loop
+.buildThemes(1);
