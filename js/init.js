@@ -1,6 +1,8 @@
 $(document).ready(function(){
-    var maskList = $.masksSort($.masksLoad("/js/libs/mask/data/phone-codes.json"), ['#'], /[0-9]|#/, "mask");
-    var maskOpts = {
+    let $phoneField = $('#customer_phone');
+    let $labelInput = $('#descr');
+    let maskList = $.masksSort($.masksLoad("/js/libs/mask/data/phone-codes.json"), ['#'], /[0-9]|#/, "mask");
+    let maskOpts = {
         inputmask: {
             definitions: {
                 '#': {
@@ -17,28 +19,27 @@ $(document).ready(function(){
         list: maskList,
         listKey: "mask",
         onMaskChange: function(maskObj, determined) {
+            console.log($phoneField.length);
             if (determined) {
-                var hint = maskObj.name_en;
-                if (maskObj.desc_en && maskObj.desc_en != "") {
+                let hint = maskObj.name_en;
+                if (maskObj.desc_ru && maskObj.desc_ru != "") {
                     hint += " (" + maskObj.desc_en + ")";
                 }
-                $("#descr").html(hint);
+                $labelInput.html(hint);
+
             } else {
-                $("#descr").html("Mask of input");
+                $labelInput.html("Mask of input");
             }
         }
     };
-
-    $('#phone_mask').change(function() {
-        if ($('#phone_mask').is(':checked')) {
-            $('#customer_phone').inputmask("remove");
-            $('#customer_phone').inputmasks(maskOpts);
-        } else {
-            $('#customer_phone').inputmasks("remove");
-            $('#customer_phone').inputmask("+#{*}", maskOpts.inputmask);
-            $("#descr").html("Mask of input");
-        }
+    $phoneField.on('focus', function() {
+        $phoneField.inputmasks(maskOpts);
+        console.log($phoneField.inputmasks(maskOpts));
+        $('#phone_mask').change();
     });
+    $phoneField.on('keyup', function() {
 
-    $('#phone_mask').change();
+        console.log($phoneField.inputmasks());
+
+    });
 });

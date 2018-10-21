@@ -39,7 +39,7 @@
 	            <div class="form-inputs">
 	            	<i class="fas fa-phone"></i>
 					<p>
-						<input type="tel" id="customer_phone" splaceholder="Номер телефона" value="" size="25" required>
+						<input type="tel" id="customer_phone" placeholder="Номер телефона" value="" size="25" required>
 						<button type="submit" href="#pablo" class="btn btn-submit"><i class="fas fa-arrow-right"></i></button>
 
 					</p>
