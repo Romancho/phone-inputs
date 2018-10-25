@@ -24,7 +24,7 @@ $(document).ready(function(){
             if (determined) {
                 let hint = maskObj.name_ru;
                 if (maskObj.desc_ru && maskObj.desc_ru != "") {
-                    hint += " (" + maskObj.desc_en + ")";
+                    hint += " (" + maskObj.desc_ru + ")";
                 }
                 $labelInput.html(hint);
                 s = maskObj;
@@ -55,10 +55,5 @@ $(document).ready(function(){
         $phoneField.inputmasks(maskOpts);
         $('#phone_mask').change();
     });
-    $phoneField.on('keyup', function() {
 
-        console.log($phoneField.inputmasks());
-
-
-    });
 });
