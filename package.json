@@ -1,6 +1,6 @@
 {
   "name": "mask-phone",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Toolkit for masking phone number by countries and cities",
   "main": "index.js",
   "private": true,
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@bitbucket.org:enslavewifiteam/enslave-wifi-front.git"
+    "url": "git@github.com:Romancho/phone-inputs.git"
   },
   "author": "Roman Poslovin",
   "license": "ISC"
